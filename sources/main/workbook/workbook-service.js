@@ -7,7 +7,6 @@
   module.exports = {
 
     create: function (properties) {
-//      properties.id = null;
       properties.status = 'CREATED';
       properties.assignments = [];
       var tasks = imports.taskRepository.findAll();
@@ -29,16 +28,33 @@
     },
 
     decline: function (id) {
-      console.log(id);
       var workbook = imports.workbookRepository.findById(id);
       workbook.status = "DECLINED";
       return imports.workbookRepository.save(workbook);
     },
 
     submit: function (id) {
-      console.log(id);
       var workbook = imports.workbookRepository.findById(id);
       workbook.status = "SUBMITTED";
+      workbook.assessment= {
+        percentage: 100.0
+      };
+      return imports.workbookRepository.save(workbook);
+    },
+
+    feedback: function (id) {
+      var workbook = imports.workbookRepository.findById(id);
+      workbook.feedback = {
+        
+      };
+      return imports.workbookRepository.save(workbook);
+    },
+
+    essay: function (id) {
+      var workbook = imports.workbookRepository.findById(id);
+      workbook.essay = {
+        
+      };
       return imports.workbookRepository.save(workbook);
     }
   };

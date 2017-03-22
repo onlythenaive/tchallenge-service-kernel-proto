@@ -25,6 +25,22 @@
 
       .post('/', function (request, response) {
         response.json(imports.workbookService.create(request.body));
+      })
+
+      .post('/:id/declination', function (request, response) {
+        response.json(imports.workbookService.decline(request.params.id));
+      })
+
+      .post('/:id/submission', function (request, response) {
+        response.json(imports.workbookService.submit(request.params.id));
+      })
+
+      .post('/:id/feedback', function (request, response) {
+        response.json(imports.workbookService.feedback(request.params.id));
+      })
+
+      .post('/:id/essay', function (request, response) {
+        response.json(imports.workbookService.essay(request.params.id));
       });
 })({
 

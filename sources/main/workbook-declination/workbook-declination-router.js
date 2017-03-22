@@ -13,11 +13,7 @@
 
   it.path = '/workbooks';
 
-  it.router = imports.express.Router()
-
-      .post('/:id/declination', function (request, response) {
-        response.json(imports.workbookService.decline(request.params.id));
-      });
+  it.router = imports.express.Router();
 })({
 
   express: require('express'),

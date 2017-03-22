@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production';
+
 (function ($) {
 
   var server = $.express();

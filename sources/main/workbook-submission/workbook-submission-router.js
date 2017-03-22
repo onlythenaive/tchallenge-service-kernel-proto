@@ -13,12 +13,7 @@
 
   it.path = '/workbooks';
 
-  it.router = imports.express.Router()
-
-      .post('/:id/submission', function (request, response) {
-        
-        response.json(imports.workbookService.submit(request.params.id));
-      });
+  it.router = imports.express.Router();
 })({
 
   express: require('express'),
